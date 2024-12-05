@@ -1,16 +1,16 @@
 ﻿@inherits LayoutComponentBase
-<div class="page">
-    <div class="sidebar">
-        <NavMenu />
+<div class="top-bar">
+    <div class="logo">
+        <h1>GameFindr - CA3</h1>
     </div>
-
-    <main>
-        <div class="top-row px-4">
-            <a href="https://rawg.io/apidocs" target="_blank">About the API</a>
-        </div>
-
-        <article class="content px-4">
-            @Body
-        </article>
-    </main>
+    <nav class="top-nav">
+        <a class="nav-link" href="/">Home</a>
+        <a class="nav-link" href="/search">Search</a>
+        <a class="nav-link" href="/catalog">Catalog</a>
+        <a class="nav-link" href="/about">About</a>
+        <a class="nav-link" href="https://rawg.io/apidocs">About the API</a>
+    </nav>
+</div>
+<div class="main-content">
+    @Body
 </div>

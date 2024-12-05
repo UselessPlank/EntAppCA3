@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jason\\source\\repos\\BlazorRAWGProject\\BlazorRAWGProject.csproj": {}
+    "C:\\Users\\jason\\Documents\\Blazor\\BlazorRAWGProject.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jason\\source\\repos\\BlazorRAWGProject\\BlazorRAWGProject.csproj": {
+    "C:\\Users\\jason\\Documents\\Blazor\\BlazorRAWGProject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jason\\source\\repos\\BlazorRAWGProject\\BlazorRAWGProject.csproj",
+        "projectUniqueName": "C:\\Users\\jason\\Documents\\Blazor\\BlazorRAWGProject.csproj",
         "projectName": "BlazorRAWGProject",
-        "projectPath": "C:\\Users\\jason\\source\\repos\\BlazorRAWGProject\\BlazorRAWGProject.csproj",
+        "projectPath": "C:\\Users\\jason\\Documents\\Blazor\\BlazorRAWGProject.csproj",
         "packagesPath": "C:\\Users\\jason\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jason\\source\\repos\\BlazorRAWGProject\\obj\\",
+        "outputPath": "C:\\Users\\jason\\Documents\\Blazor\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\jason\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -39,9 +39,8 @@
         "restoreAuditProperties": {
           "enableAudit": "true",
           "auditLevel": "low",
-          "auditMode": "all"
-        },
-        "SdkAnalysisLevel": "9.0.100"
+          "auditMode": "direct"
+        }
       },
       "frameworks": {
         "net8.0": {
@@ -59,13 +58,13 @@
             "Microsoft.NET.ILLink.Tasks": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[8.0.11, )",
+              "version": "[8.0.10, )",
               "autoReferenced": true
             },
             "Microsoft.NET.Sdk.WebAssembly.Pack": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[9.0.0, )",
+              "version": "[8.0.10, )",
               "autoReferenced": true
             }
           },
@@ -82,20 +81,8 @@
           "warn": true,
           "downloadDependencies": [
             {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[8.0.11, 8.0.11]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[8.0.11, 8.0.11]"
-            },
-            {
               "name": "Microsoft.NETCore.App.Runtime.Mono.browser-wasm",
-              "version": "[8.0.11, 8.0.11]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[8.0.11, 8.0.11]"
+              "version": "[8.0.10, 8.0.10]"
             }
           ],
           "frameworkReferences": {
@@ -103,7 +90,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
         }
       },
       "runtimes": {

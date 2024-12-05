@@ -88,7 +88,7 @@
 
             while (hasMoreGames)
             {
-                var response = await client.GetFromJsonAsync<ApiResponse>($"games?key=c977c701e166451fbc739fa8d74153d3&page={page}&page_size={pageSize}");
+                var response = await client.GetFromJsonAsync<ApiResponse>($"games?key=KEY&page={page}&page_size={pageSize}");
 
                 if (response?.Results != null && response.Results.Any())
                 {

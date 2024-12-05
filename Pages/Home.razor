@@ -1,24 +1,33 @@
 ﻿@page "/"
 
-<div class="container text-center mt-5">
-    <h1 class="display-6 text-center text-primary">GameFindr - Video Game Database</h1>
-    <p class="lead mt-3">Discover, explore, and track your favorite video games effortlessly.</p>
+<div class="layout-container d-flex flex-column min-vh-100">
+    <!-- Main Content -->
+    <div class="container flex-grow-1 mt-3">
+        <!-- Header Section -->
+        <header class="text-center mb-3">
+            <h1 class="display-6 text-primary">GameFindr - Video Game Database</h1>
+            <p class="lead text-secondary">Discover, explore, and track your favorite video games effortlessly.</p>
+        </header>
 
-    <div style="border-radius: 10px; overflow: hidden; max-width: 100%; margin-bottom: 10px;">
-        <img src="/lando.png" alt="RAWG API" style="width: 100%; max-height: 400px;">
+        <!-- Featured Image Section -->
+<div class="image-container mb-4 text-center">
+    <img src="/logo.png" alt="RAWG API" class="featured-image" />
+</div>
+
+        <!-- About Section -->
+        <section class="info-section bg-light p-4 rounded-3 shadow-sm text-center">
+            <h4 class="text-dark mb-3"><strong>What You Can Do</strong></h4>
+            <p>
+                GameFindr is a web application that leverages the RAWG API to provide you with detailed information about thousands of video games.
+            </p>
+            <p>
+                You can search for your favorite games, discover detailed information about new titles, view ratings, and more.
+            </p>
+        </section>
     </div>
 
-    <section class="mt-5">
-        <div style="background-color: #f5f5dc; border-radius: 15px; padding: 10px;">
-            <h4><strong>What You Can Do</strong></h4>
-            <p>GameFindr is a web application that leverages the RAWG API to provide you with detailed information about thousands of video games.</p>
-            <p>You can search for your favourite games, discover detailed information about new titles, view ratings, and more.</p>
-        </div>
-
-    </section>
-
-    <footer class="mt-5">
-        <hr />
-        <p class="text-muted">&copy; 2024 Jason O'Connor | Powered by RAWG API</p>
+    <!-- Footer Section -->
+    <footer class="footer text-center text-muted p-3">
+        &copy; 2024 Jason O'Connor | Powered by RAWG API
     </footer>
 </div>
