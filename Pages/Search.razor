@@ -1,0 +1,91 @@
+﻿@page "/search"
+
+<div class="container mt-5">
+    <h1 class="display-6 text-center text-primary">Search for Your Favorite Games</h1>
+    <p class="text-center text-muted mb-5">Enter a game name below to discover details and ratings from the RAWG database.</p>
+
+    <div class="d-flex justify-content-center">
+        <div class="input-group mb-3" style="max-width: 500px;">
+            <input @bind="SearchTerm"
+                   class="form-control"
+                   placeholder="Enter game name..."
+                   aria-label="Search"
+                   aria-describedby="button-search">
+            <button class="btn btn-primary"
+                    type="button"
+                    id="button-search"
+                    @onclick="SearchGames">
+                Search
+            </button>
+        </div>
+    </div>
+
+    @if (IsError)
+    {
+        <div class="alert alert-danger text-center" role="alert">
+            Error: Could not fetch data. Please try again later.
+        </div>
+    }
+
+    @if (Games != null && Games.Any())
+    {
+        <div class="mt-4">
+            <h3 class="text-secondary">Search Results</h3>
+            <div class="table-responsive mt-3">
+                <table class="table table-striped table-hover">
+                    <thead class="table-primary">
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Game Name</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @for (int i = 0; i < Games.Count; i++)
+                        {
+                            <tr>
+                                <td>@(i + 1)</td>
+                                <td>@Games[i].Name</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    }
+
+    else if (!string.IsNullOrWhiteSpace(SearchTerm) && !IsError)
+    {
+        <p class="text-center text-muted mt-4">No results found for "<strong>@SearchTerm</strong>".</p>
+    }
+</div>
+
+@code {
+    private string SearchTerm = string.Empty;
+    private List<Game> Games;
+    private bool IsError;
+
+    private async Task SearchGames()
+    {
+        try
+        {
+            IsError = false;
+            var client = new HttpClient { BaseAddress = new Uri("https://api.rawg.io/api/") };
+            var response = await client.GetFromJsonAsync<ApiResponse>($"games?search={SearchTerm}&key=c977c701e166451fbc739fa8d74153d3");
+            Games = response?.Results ?? new List<Game>();
+        }
+        catch
+        {
+            IsError = true;
+        }
+    }
+
+    public class ApiResponse
+    {
+        public List<Game> Results { get; set; }
+    }
+
+    public class Game
+    {
+        public string Name { get; set; }
+    }
+}

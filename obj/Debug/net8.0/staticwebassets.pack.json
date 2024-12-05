@@ -1,0 +1,65 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\jason\\source\\repos\\BlazorRAWGProject\\bin\\Debug\\net8.0\\wwwroot\\_framework\\blazor.webassembly.js",
+      "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js"
+    },
+    {
+      "Id": "C:\\Users\\jason\\source\\repos\\BlazorRAWGProject\\obj\\Debug\\net8.0\\scopedcss\\bundle\\BlazorRAWGProject.styles.css",
+      "PackagePath": "staticwebassets\\BlazorRAWGProject.styles.css"
+    },
+    {
+      "Id": "C:\\Users\\jason\\source\\repos\\BlazorRAWGProject\\wwwroot\\css\\app.css",
+      "PackagePath": "staticwebassets\\css\\app.css"
+    },
+    {
+      "Id": "C:\\Users\\jason\\source\\repos\\BlazorRAWGProject\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\jason\\source\\repos\\BlazorRAWGProject\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\jason\\source\\repos\\BlazorRAWGProject\\wwwroot\\favicon.png",
+      "PackagePath": "staticwebassets\\favicon.png"
+    },
+    {
+      "Id": "C:\\Users\\jason\\source\\repos\\BlazorRAWGProject\\wwwroot\\icon-192.png",
+      "PackagePath": "staticwebassets\\icon-192.png"
+    },
+    {
+      "Id": "C:\\Users\\jason\\source\\repos\\BlazorRAWGProject\\wwwroot\\index.html",
+      "PackagePath": "staticwebassets\\index.html"
+    },
+    {
+      "Id": "C:\\Users\\jason\\source\\repos\\BlazorRAWGProject\\wwwroot\\lando.png",
+      "PackagePath": "staticwebassets\\lando.png"
+    },
+    {
+      "Id": "C:\\Users\\jason\\source\\repos\\BlazorRAWGProject\\wwwroot\\sample-data\\weather.json",
+      "PackagePath": "staticwebassets\\sample-data\\weather.json"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.BlazorRAWGProject.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.BlazorRAWGProject.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.BlazorRAWGProject.props",
+      "PackagePath": "build\\BlazorRAWGProject.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.BlazorRAWGProject.props",
+      "PackagePath": "buildMultiTargeting\\BlazorRAWGProject.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.BlazorRAWGProject.props",
+      "PackagePath": "buildTransitive\\BlazorRAWGProject.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

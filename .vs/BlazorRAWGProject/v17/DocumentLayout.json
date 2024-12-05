@@ -1,0 +1,170 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\jason\\source\\repos\\BlazorRAWGProject\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{6DBAA1BB-F0CC-46F3-8B9B-FC620E2871AF}|BlazorRAWGProject.csproj|c:\\users\\jason\\source\\repos\\blazorrawgproject\\pages\\search.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6DBAA1BB-F0CC-46F3-8B9B-FC620E2871AF}|BlazorRAWGProject.csproj|solutionrelative:pages\\search.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6DBAA1BB-F0CC-46F3-8B9B-FC620E2871AF}|BlazorRAWGProject.csproj|c:\\users\\jason\\source\\repos\\blazorrawgproject\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6DBAA1BB-F0CC-46F3-8B9B-FC620E2871AF}|BlazorRAWGProject.csproj|solutionrelative:layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6DBAA1BB-F0CC-46F3-8B9B-FC620E2871AF}|BlazorRAWGProject.csproj|c:\\users\\jason\\source\\repos\\blazorrawgproject\\layout\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6DBAA1BB-F0CC-46F3-8B9B-FC620E2871AF}|BlazorRAWGProject.csproj|solutionrelative:layout\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6DBAA1BB-F0CC-46F3-8B9B-FC620E2871AF}|BlazorRAWGProject.csproj|c:\\users\\jason\\source\\repos\\blazorrawgproject\\wwwroot\\css\\app.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{6DBAA1BB-F0CC-46F3-8B9B-FC620E2871AF}|BlazorRAWGProject.csproj|solutionrelative:wwwroot\\css\\app.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6DBAA1BB-F0CC-46F3-8B9B-FC620E2871AF}|BlazorRAWGProject.csproj|c:\\users\\jason\\source\\repos\\blazorrawgproject\\pages\\catalog.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6DBAA1BB-F0CC-46F3-8B9B-FC620E2871AF}|BlazorRAWGProject.csproj|solutionrelative:pages\\catalog.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6DBAA1BB-F0CC-46F3-8B9B-FC620E2871AF}|BlazorRAWGProject.csproj|c:\\users\\jason\\source\\repos\\blazorrawgproject\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6DBAA1BB-F0CC-46F3-8B9B-FC620E2871AF}|BlazorRAWGProject.csproj|solutionrelative:pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6DBAA1BB-F0CC-46F3-8B9B-FC620E2871AF}|BlazorRAWGProject.csproj|c:\\users\\jason\\source\\repos\\blazorrawgproject\\pages\\about.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6DBAA1BB-F0CC-46F3-8B9B-FC620E2871AF}|BlazorRAWGProject.csproj|solutionrelative:pages\\about.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6DBAA1BB-F0CC-46F3-8B9B-FC620E2871AF}|BlazorRAWGProject.csproj|c:\\users\\jason\\source\\repos\\blazorrawgproject\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6DBAA1BB-F0CC-46F3-8B9B-FC620E2871AF}|BlazorRAWGProject.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jason\\source\\repos\\BlazorRAWGProject\\Pages\\Component.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Pages\\Component.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 7,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{bdada759-5db7-402f-96e3-402b17c8c5b4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "app.css",
+              "DocumentMoniker": "C:\\Users\\jason\\source\\repos\\BlazorRAWGProject\\wwwroot\\css\\app.css",
+              "RelativeDocumentMoniker": "wwwroot\\css\\app.css",
+              "ToolTip": "C:\\Users\\jason\\source\\repos\\BlazorRAWGProject\\wwwroot\\css\\app.css",
+              "RelativeToolTip": "wwwroot\\css\\app.css",
+              "ViewState": "AgIAAFAAAAAAAAAAAADwv2sAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-12-04T10:36:51.993Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Catalog.razor",
+              "DocumentMoniker": "C:\\Users\\jason\\source\\repos\\BlazorRAWGProject\\Pages\\Catalog.razor",
+              "RelativeDocumentMoniker": "Pages\\Catalog.razor",
+              "ToolTip": "C:\\Users\\jason\\source\\repos\\BlazorRAWGProject\\Pages\\Catalog.razor",
+              "RelativeToolTip": "Pages\\Catalog.razor",
+              "ViewState": "AgIAAEsAAAAAAAAAAAAAAGAAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-04T10:19:22.034Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Component.razor",
+              "DocumentMoniker": "C:\\Users\\jason\\source\\repos\\BlazorRAWGProject\\Pages\\Component.razor",
+              "RelativeDocumentMoniker": "Pages\\Component.razor",
+              "ToolTip": "C:\\Users\\jason\\source\\repos\\BlazorRAWGProject\\Pages\\Component.razor",
+              "RelativeToolTip": "Pages\\Component.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-04T10:18:33.092Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MainLayout.razor",
+              "DocumentMoniker": "C:\\Users\\jason\\source\\repos\\BlazorRAWGProject\\Layout\\MainLayout.razor",
+              "RelativeDocumentMoniker": "Layout\\MainLayout.razor",
+              "ToolTip": "C:\\Users\\jason\\source\\repos\\BlazorRAWGProject\\Layout\\MainLayout.razor",
+              "RelativeToolTip": "Layout\\MainLayout.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAABLAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-03T15:03:46.575Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "NavMenu.razor",
+              "DocumentMoniker": "C:\\Users\\jason\\source\\repos\\BlazorRAWGProject\\Layout\\NavMenu.razor",
+              "RelativeDocumentMoniker": "Layout\\NavMenu.razor",
+              "ToolTip": "C:\\Users\\jason\\source\\repos\\BlazorRAWGProject\\Layout\\NavMenu.razor",
+              "RelativeToolTip": "Layout\\NavMenu.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-03T14:36:51.894Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "About.razor",
+              "DocumentMoniker": "C:\\Users\\jason\\source\\repos\\BlazorRAWGProject\\Pages\\About.razor",
+              "RelativeDocumentMoniker": "Pages\\About.razor",
+              "ToolTip": "C:\\Users\\jason\\source\\repos\\BlazorRAWGProject\\Pages\\About.razor",
+              "RelativeToolTip": "Pages\\About.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-03T14:31:30.863Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Search.razor",
+              "DocumentMoniker": "C:\\Users\\jason\\source\\repos\\BlazorRAWGProject\\Pages\\Search.razor",
+              "RelativeDocumentMoniker": "Pages\\Search.razor",
+              "ToolTip": "C:\\Users\\jason\\source\\repos\\BlazorRAWGProject\\Pages\\Search.razor",
+              "RelativeToolTip": "Pages\\Search.razor",
+              "ViewState": "AgIAAEEAAAAAAAAAAAAQwFoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-03T14:31:21.047Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\jason\\source\\repos\\BlazorRAWGProject\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\jason\\source\\repos\\BlazorRAWGProject\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-04T09:51:06.064Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Home.razor",
+              "DocumentMoniker": "C:\\Users\\jason\\source\\repos\\BlazorRAWGProject\\Pages\\Home.razor",
+              "RelativeDocumentMoniker": "Pages\\Home.razor",
+              "ToolTip": "C:\\Users\\jason\\source\\repos\\BlazorRAWGProject\\Pages\\Home.razor",
+              "RelativeToolTip": "Pages\\Home.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-03T14:30:38.346Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

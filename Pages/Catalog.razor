@@ -1,0 +1,150 @@
+﻿@page "/catalog"
+
+<div class="container mt-5">
+    <h1 class="display-6 text-center text-primary">Game Catalog</h1>
+    <p class="text-center text-muted mb-4">Browse games fetched from the RAWG API. Use filters or pagination to explore!</p>
+
+    <!-- Alphabet Filters -->
+    <div class="d-flex justify-content-center mb-4">
+        @foreach (char letter in Alphabet)
+        {
+            <button class="btn btn-outline-primary mx-1"
+                    @onclick="() => ApplyFilter(letter)">
+                @letter
+            </button>
+        }
+        <button class="btn btn-danger mx-1" @onclick="ClearFilter">Clear</button>
+    </div>
+
+    <!-- Games Grid -->
+    @if (IsError)
+    {
+        <div class="alert alert-danger text-center" role="alert">
+            Error: Could not fetch data. Please try again later.
+        </div>
+    }
+    else if (Games != null && Games.Any())
+    {
+        <div class="row">
+            @foreach (var game in CurrentPageGames)
+            {
+                <div class="col-md-2 mb-4">
+                    <div class="card">
+                        <img src="@game.Background_Image" class="card-img-top img-fluid" alt="@game.Name" style="max-height: 150px; object-fit: cover;">
+                        <div class="card-body text-center">
+                            <h6 class="card-title text-truncate">@game.Name</h6>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+    else
+    {
+        <p class="text-center text-muted">No games found.</p>
+    }
+
+    <!-- Pagination -->
+    <nav class="d-flex justify-content-center mt-4">
+        <ul class="pagination">
+            @for (int i = 1; i <= TotalPages; i++)
+            {
+                <li class="page-item @(i == CurrentPage ? "active" : "")">
+                    <button class="page-link" @onclick="() => ChangePage(i)">@i</button>
+                </li>
+            }
+        </ul>
+    </nav>
+</div>
+
+@code {
+    private List<Game> Games;
+    private List<Game> CurrentPageGames;
+    private bool IsError;
+
+    private int CurrentPage = 1;
+    private const int PageSize = 20; // 4 rows of 5 games
+    private int TotalPages;
+
+    private char? SelectedLetter = null;
+    private readonly char[] Alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".ToCharArray();
+
+    protected override async Task OnInitializedAsync()
+    {
+        await FetchGames();
+    }
+
+    private async Task FetchGames()
+    {
+        try
+        {
+            IsError = false;
+            Games = new List<Game>();
+
+            var client = new HttpClient { BaseAddress = new Uri("https://api.rawg.io/api/") };
+            int page = 1;
+            const int pageSize = 40; // Max page size is 40
+            bool hasMoreGames = true;
+
+            while (hasMoreGames)
+            {
+                var response = await client.GetFromJsonAsync<ApiResponse>($"games?key=c977c701e166451fbc739fa8d74153d3&page={page}&page_size={pageSize}");
+
+                if (response?.Results != null && response.Results.Any())
+                {
+                    Games.AddRange(response.Results);
+                    page++;
+                }
+                else
+                {
+                    hasMoreGames = false; // Stop fetching when no more games are returned
+                }
+            }
+
+            ApplyPagination();
+        }
+        catch
+        {
+            IsError = true;
+        }
+    }
+
+    private void ApplyFilter(char letter)
+    {
+        SelectedLetter = letter;
+        var filteredGames = Games.Where(g => g.Name.StartsWith(letter.ToString(), StringComparison.OrdinalIgnoreCase)).ToList();
+        Games = filteredGames;
+        CurrentPage = 1;
+        ApplyPagination();
+    }
+
+    private void ClearFilter()
+    {
+        SelectedLetter = null;
+        CurrentPage = 1;
+        FetchGames();
+    }
+
+    private void ApplyPagination()
+    {
+        TotalPages = (int)Math.Ceiling((double)Games.Count / PageSize);
+        CurrentPageGames = Games.Skip((CurrentPage - 1) * PageSize).Take(PageSize).ToList();
+    }
+
+    private void ChangePage(int pageNumber)
+    {
+        CurrentPage = pageNumber;
+        ApplyPagination();
+    }
+
+    public class ApiResponse
+    {
+        public List<Game> Results { get; set; }
+    }
+
+    public class Game
+    {
+        public string Name { get; set; }
+        public string Background_Image { get; set; } // Note the underscore
+    }
+}
