@@ -2071,3 +2071,9 @@ C:\Users\jason\Documents\Blazor\obj\Debug\net8.0\BlazorRAWGProject.dll
 C:\Users\jason\Documents\Blazor\obj\Debug\net8.0\refint\BlazorRAWGProject.dll
 C:\Users\jason\Documents\Blazor\obj\Debug\net8.0\BlazorRAWGProject.pdb
 C:\Users\jason\Documents\Blazor\obj\Debug\net8.0\ref\BlazorRAWGProject.dll
+C:\Users\jason\Documents\Blazor\bin\Debug\net8.0\wwwroot\_framework\Microsoft.AspNetCore.Components.Authorization.wasm
+C:\Users\jason\Documents\Blazor\bin\Debug\net8.0\wwwroot\_framework\Microsoft.AspNetCore.Components.Authorization.wasm.gz
+C:\Users\jason\Documents\Blazor\bin\Debug\net8.0\appsettings.json
+C:\Users\jason\Documents\Blazor\bin\Debug\net8.0\Microsoft.AspNetCore.Components.Authorization.dll
+C:\Users\jason\Documents\Blazor\obj\Debug\net8.0\webcil\Microsoft.AspNetCore.Components.Authorization.wasm
+C:\Users\jason\Documents\Blazor\obj\Debug\net8.0\compressed\a9xb51wq1v.gz

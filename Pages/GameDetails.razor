@@ -1,0 +1,52 @@
+﻿@page "/game/{GameId}"
+
+<div class="container mt-5">
+    @if (GameInfo != null)
+    {
+            <div>
+                <img src="@GameInfo.BackgroundImage" alt="@GameInfo.Name" class="img-fluid mb-4" />
+                <h1>@GameInfo.Name</h1>
+                <p>@(new MarkupString(GameInfo.Description))</p>
+            </div>
+    }
+    else if (IsLoading)
+    {
+            <p>Loading game details...</p>
+    }
+    else
+    {
+            <p>Error loading game details. Please try again.</p>
+    }
+</div>
+
+@code {
+    [Parameter]
+    public string GameId { get; set; }
+
+    private GameDetail GameInfo;
+    private bool IsLoading = true;
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            var client = new HttpClient { BaseAddress = new Uri("https://api.rawg.io/api/") };
+            GameInfo = await client.GetFromJsonAsync<GameDetail>($"games/{GameId}?key=c977c701e166451fbc739fa8d74153d3");
+        }
+        catch
+        {
+            GameInfo = null;
+        }
+        finally
+        {
+            IsLoading = false;
+        }
+    }
+
+    public class GameDetail
+    {
+        public string Name { get; set; }
+        public string Description { get; set; }
+        public string BackgroundImage { get; set; }
+    }
+}

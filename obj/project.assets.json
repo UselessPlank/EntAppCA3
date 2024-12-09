@@ -43,6 +43,23 @@
           "buildTransitive/netstandard2.0/Microsoft.AspNetCore.Components.Analyzers.targets": {}
         }
       },
+      "Microsoft.AspNetCore.Components.Authorization/8.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Authorization": "8.0.0",
+          "Microsoft.AspNetCore.Components": "8.0.0"
+        },
+        "compile": {
+          "lib/net8.0/Microsoft.AspNetCore.Components.Authorization.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.AspNetCore.Components.Authorization.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Microsoft.AspNetCore.Components.Forms/8.0.8": {
         "type": "package",
         "dependencies": {
@@ -533,6 +550,23 @@
         "type": "package",
         "build": {
           "buildTransitive/netstandard2.0/Microsoft.AspNetCore.Components.Analyzers.targets": {}
+        }
+      },
+      "Microsoft.AspNetCore.Components.Authorization/8.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Authorization": "8.0.0",
+          "Microsoft.AspNetCore.Components": "8.0.0"
+        },
+        "compile": {
+          "lib/net8.0/Microsoft.AspNetCore.Components.Authorization.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.AspNetCore.Components.Authorization.dll": {
+            "related": ".xml"
+          }
         }
       },
       "Microsoft.AspNetCore.Components.Forms/8.0.8": {
@@ -1029,6 +1063,21 @@
         "buildTransitive/netstandard2.0/Microsoft.AspNetCore.Components.Analyzers.targets",
         "microsoft.aspnetcore.components.analyzers.8.0.8.nupkg.sha512",
         "microsoft.aspnetcore.components.analyzers.nuspec"
+      ]
+    },
+    "Microsoft.AspNetCore.Components.Authorization/8.0.0": {
+      "sha512": "GlaNfvmRQAmXMrNlJcQJcB/K8ptShc121sQdqc82Yigd6d7lMVbMKI/P+rNr1ReEhPgMQNd66uh1INF9QlxI6Q==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.components.authorization/8.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "THIRD-PARTY-NOTICES.txt",
+        "lib/net8.0/Microsoft.AspNetCore.Components.Authorization.dll",
+        "lib/net8.0/Microsoft.AspNetCore.Components.Authorization.xml",
+        "microsoft.aspnetcore.components.authorization.8.0.0.nupkg.sha512",
+        "microsoft.aspnetcore.components.authorization.nuspec"
       ]
     },
     "Microsoft.AspNetCore.Components.Forms/8.0.8": {
@@ -2052,6 +2101,7 @@
   },
   "projectFileDependencyGroups": {
     "net8.0": [
+      "Microsoft.AspNetCore.Components.Authorization >= 8.0.0",
       "Microsoft.AspNetCore.Components.WebAssembly >= 8.0.8",
       "Microsoft.AspNetCore.Components.WebAssembly.DevServer >= 8.0.8",
       "Microsoft.NET.ILLink.Tasks >= 8.0.10",
@@ -2103,6 +2153,10 @@
       "net8.0": {
         "targetAlias": "net8.0",
         "dependencies": {
+          "Microsoft.AspNetCore.Components.Authorization": {
+            "target": "Package",
+            "version": "[8.0.0, )"
+          },
           "Microsoft.AspNetCore.Components.WebAssembly": {
             "target": "Package",
             "version": "[8.0.8, )"

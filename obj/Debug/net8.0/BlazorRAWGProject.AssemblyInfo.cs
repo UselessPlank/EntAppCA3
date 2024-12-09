@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BlazorRAWGProject")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c8ff6db2aa20e5ca23e4207a1b0ffcf2261d3df8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8200592ad6551711ade668f5484bd00ef6a485c8")]
 [assembly: System.Reflection.AssemblyProductAttribute("BlazorRAWGProject")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BlazorRAWGProject")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

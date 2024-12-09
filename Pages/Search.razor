@@ -70,7 +70,7 @@
         {
             IsError = false;
             var client = new HttpClient { BaseAddress = new Uri("https://api.rawg.io/api/") };
-            var response = await client.GetFromJsonAsync<ApiResponse>($"games?search={SearchTerm}&key=KEY");
+            var response = await client.GetFromJsonAsync<ApiResponse>($"games?search={SearchTerm}&key=c977c701e166451fbc739fa8d74153d3");
             Games = response?.Results ?? new List<Game>();
         }
         catch
