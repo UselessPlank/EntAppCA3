@@ -1,91 +1,234 @@
-﻿@page "/search"
+@page "/catalog"
 
 <div class="container mt-5">
-    <h1 class="display-6 text-center text-primary">Search for Your Favorite Games</h1>
-    <p class="text-center text-muted mb-5">Enter a game name below to discover details and ratings from the RAWG database.</p>
+    <h1 class="display-6 text-center text-primary">Game Catalog</h1>
+    <p class="text-center text-muted mb-4">Browse games fetched from the RAWG API. Use filters or pagination to explore!</p>
 
-    <div class="d-flex justify-content-center">
-        <div class="input-group mb-3" style="max-width: 500px;">
-            <input @bind="SearchTerm"
-                   class="form-control"
-                   placeholder="Enter game name..."
-                   aria-label="Search"
-                   aria-describedby="button-search">
-            <button class="btn btn-primary"
-                    type="button"
-                    id="button-search"
-                    @onclick="SearchGames">
-                Search
+    <!-- Adding the Alphabet Filter -->
+    <div class="d-flex justify-content-center mb-4">
+        @foreach (char letter in Alphabet)
+        {
+            <button class="btn btn-outline-primary mx-1"
+                    @onclick="() => ApplyFilter(letter)">
+                @letter
             </button>
-        </div>
+        }
+        <button class="btn btn-danger mx-1" @onclick="ClearFilter">Clear</button>
     </div>
 
-    @if (IsError)
-    {
-        <div class="alert alert-danger text-center" role="alert">
-            Error: Could not fetch data. Please try again later.
-        </div>
-    }
+    <!-- Adding Most Popular Button -->
+    <div class="d-flex justify-content-center mb-4">
+        <button class="btn btn-success" @onclick="FetchMostPopularGames">Most Popular</button>
+    </div>
 
-    @if (Games != null && Games.Any())
+    <!-- Adding Loading Spinner -->
+    @if (IsLoading)
     {
-        <div class="mt-4">
-            <h3 class="text-secondary">Search Results</h3>
-            <div class="table-responsive mt-3">
-                <table class="table table-striped table-hover">
-                    <thead class="table-primary">
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">Game Name</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @for (int i = 0; i < Games.Count; i++)
-                        {
-                            <tr>
-                                <td>@(i + 1)</td>
-                                <td>@Games[i].Name</td>
-                            </tr>
-                        }
-                    </tbody>
-                </table>
+        <div class="text-center">
+            <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Loading...</span>
             </div>
         </div>
     }
 
-    else if (!string.IsNullOrWhiteSpace(SearchTerm) && !IsError)
+    <!-- Adding Games Grid -->
+    @if (IsError)
     {
-        <p class="text-center text-muted mt-4">No results found for "<strong>@SearchTerm</strong>".</p>
+        <div class="alert alert-danger text-center" role="alert">
+            @ErrorMessage
+        </div>
     }
+    else if (Games != null && Games.Any())
+    {
+        <div class="row">
+            @foreach (var game in CurrentPageGames)
+            {
+                <div class="col-md-2 mb-4">
+                    <div class="card">
+                        <img src="@game.Background_Image" class="card-img-top img-fluid" alt="@game.Name" style="max-height: 150px; object-fit: cover;">
+                        <div class="card-body text-center">
+                            <h6 class="card-title text-truncate">@game.Name</h6>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+    else
+    {
+        <p class="text-center text-muted">No games found.</p>
+    }
+
+    <!-- Adding Pagination -->
+    <nav class="d-flex justify-content-center mt-4">
+        <ul class="pagination">
+            @for (int i = 1; i <= TotalPages; i++)
+            {
+                <li class="page-item @(i == CurrentPage ? "active" : "")">
+                    <button class="page-link" @onclick="() => ChangePage(i)">@i</button>
+                </li>
+            }
+        </ul>
+    </nav>
 </div>
 
 @code {
-    private string SearchTerm = string.Empty;
     private List<Game> Games;
+    private List<Game> CurrentPageGames;
     private bool IsError;
+    private bool IsLoading;
+    private string ErrorMessage;
 
-    private async Task SearchGames()
+    private int CurrentPage = 1;
+    private const int PageSize = 18;
+    private int TotalPages;
+
+    private char? SelectedLetter = null;
+    private readonly char[] Alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".ToCharArray();
+
+    protected override async Task OnInitializedAsync()
     {
+        await FetchGames();
+    }
+
+    // Getting the Games //
+    private async Task FetchGames()
+    {
+        IsLoading = true;
         try
         {
             IsError = false;
             var client = new HttpClient { BaseAddress = new Uri("https://api.rawg.io/api/") };
-            var response = await client.GetFromJsonAsync<ApiResponse>($"games?search={SearchTerm}&key=68af9d49b5bd4c81a3780fc447849bc6");
-            Games = response?.Results ?? new List<Game>();
+            var response = await client.GetAsync($"games?key=c977c701e166451fbc739fa8d74153d3&page={CurrentPage}&page_size={PageSize}");
+
+            if (!response.IsSuccessStatusCode)
+            {
+                IsError = true;
+                ErrorMessage = $"Error {response.StatusCode}: Unable to fetch data.";
+                return;
+            }
+
+            var apiResponse = await response.Content.ReadFromJsonAsync<ApiResponse>();
+            Games = apiResponse?.Results ?? new List<Game>();
+            ApplyPagination();
         }
-        catch
+        catch (Exception ex)
         {
             IsError = true;
+            ErrorMessage = $"Exception: {ex.Message}";
+        }
+        finally
+        {
+            IsLoading = false;
         }
     }
 
+    // Adding Most Popular Fetch //
+    private async Task FetchMostPopularGames()
+    {
+        IsLoading = true;
+        try
+        {
+            IsError = false;
+            var client = new HttpClient { BaseAddress = new Uri("https://api.rawg.io/api/") };
+            var response = await client.GetAsync($"games?key=c977c701e166451fbc739fa8d74153d3&page=1&page_size=18&ordering=-rating");
+
+            if (!response.IsSuccessStatusCode)
+            {
+                IsError = true;
+                ErrorMessage = $"Error {response.StatusCode}: Unable to fetch data.";
+                return;
+            }
+
+            var apiResponse = await response.Content.ReadFromJsonAsync<ApiResponse>();
+            Games = apiResponse?.Results ?? new List<Game>();
+            CurrentPage = 1;
+            ApplyPagination();
+        }
+        catch (Exception ex)
+        {
+            IsError = true;
+            ErrorMessage = $"Exception: {ex.Message}";
+        }
+        finally
+        {
+            IsLoading = false;
+        }
+    }
+
+    // Applying Filters //
+    private async Task ApplyFilter(char letter)
+    {
+        if (!Alphabet.Contains(letter))
+        {
+            IsError = true;
+            ErrorMessage = "Invalid filter letter.";
+            return;
+        }
+
+        IsLoading = true;
+        try
+        {
+            SelectedLetter = letter;
+
+            var client = new HttpClient { BaseAddress = new Uri("https://api.rawg.io/api/") };
+            var response = await client.GetAsync($"games?key=c977c701e166451fbc739fa8d74153d3&page=1&page_size={PageSize}&search={letter}");
+
+            if (!response.IsSuccessStatusCode)
+            {
+                IsError = true;
+                ErrorMessage = $"Error {response.StatusCode}: Unable to fetch data.";
+                return;
+            }
+
+            var apiResponse = await response.Content.ReadFromJsonAsync<ApiResponse>();
+            Games = apiResponse?.Results ?? new List<Game>();
+            CurrentPage = 1;
+            ApplyPagination();
+        }
+        catch (Exception ex)
+        {
+            IsError = true;
+            ErrorMessage = $"Exception: {ex.Message}";
+        }
+        finally
+        {
+            IsLoading = false;
+        }
+    }
+
+    // Clearing the Filter //
+    private async Task ClearFilter()
+    {
+        SelectedLetter = null;
+        CurrentPage = 1;
+        await FetchGames();
+    }
+
+    // Applying Pagination //
+    private void ApplyPagination()
+    {
+        TotalPages = (int)Math.Ceiling((double)Games.Count / PageSize);
+        CurrentPageGames = Games.Skip((CurrentPage - 1) * PageSize).Take(PageSize).ToList();
+    }
+
+    // Allowing Page Changing //
+    private void ChangePage(int pageNumber)
+    {
+        CurrentPage = pageNumber;
+        ApplyPagination();
+    }
+
+    // API Results Get //
     public class ApiResponse
     {
         public List<Game> Results { get; set; }
     }
 
+    // Setting Up the Games //
     public class Game
     {
         public string Name { get; set; }
+        public string Background_Image { get; set; } // Note the underscore
     }
 }
