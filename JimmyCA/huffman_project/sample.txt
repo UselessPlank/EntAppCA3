@@ -1,0 +1,5 @@
+This is a sample text file for testing Huffman coding.
+It contains various characters and repeated patterns.
+The quick brown fox jumps over the lazy dog.
+1234567890
+!@#$%^&*() 
